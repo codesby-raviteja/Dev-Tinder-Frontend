@@ -12,7 +12,11 @@ const NavBar = () => {
 
   const logout = async () => {
     try {
-      const res = await axios.post(BASE_URL + "/logout")
+      const res = await axios.post(
+        BASE_URL + "/logout",
+        {},
+        { withCredentials: true }
+      )
       dispatch(removeUser())
       return navigate("/login")
     } catch (err) {
@@ -50,7 +54,14 @@ const NavBar = () => {
                 </Link>
               </li>
               <li>
-                <a>Settings</a>
+              <Link to={"/connections"} className="justify-between">
+                  Connections
+                </Link>
+              </li>
+              <li>
+              <Link to={"/requests"} className="justify-between">
+                  requests
+                </Link>
               </li>
               <li onClick={logout}>
                 <a>Logout</a>
