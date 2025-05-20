@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import NavBar from "./Navbar"
-import { Navigate, Outlet, useNavigate } from "react-router-dom"
+import {  Outlet, useNavigate } from "react-router-dom"
 import Footer from "./Footer"
 import axios from "axios"
 import { useDispatch } from "react-redux"

@@ -2,7 +2,7 @@ import axios from "axios"
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addUser } from "../utils/userSlice"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { BASE_URL } from "../utils/constant"
 
 const Login = () => {
@@ -29,7 +29,7 @@ const Login = () => {
     }
   }
   return (
-    <div className="w-full h-[calc(100vh-300px)] flex justify-center items-center">
+    <div className="w-full h-[calc(100vh-200px)] flex justify-center items-center">
       <div className="card card-side bg-base-300 shadow-sm w-full max-w-3xl">
         <figure className="w-1/2">
           <img
@@ -41,7 +41,9 @@ const Login = () => {
           <h2 className="card-title justify-center text-2xl underline">
             Login
           </h2>
-
+          <p className="text-blue-500 text-center">
+            New user? <Link to={"/signup"} className="underline cursor-pointer ">signup</Link>
+          </p>
           <div>
             <fieldset className="fieldset">
               <legend className="fieldset-legend">Email Id</legend>
@@ -65,7 +67,7 @@ const Login = () => {
               />
             </fieldset>
           </div>
-          <p className="text-red-400 text-center text-base ">{error}</p>
+          <p className="text-red-400 text-center text-base">{error}</p>
           <div className="card-actions justify-end">
             <button
               className="btn btn-primary w-full mt-6"
