@@ -11,6 +11,9 @@ const Body = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+
+  console.log("Location=>",location.host);
+
   const fetchUser = async () => {
     try {
       const res = await axios.get(BASE_URL + "/profile/view", {
